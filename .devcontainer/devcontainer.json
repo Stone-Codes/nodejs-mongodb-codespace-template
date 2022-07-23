@@ -1,0 +1,30 @@
+{
+    "name": "Node.js & MongoDB",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    // Set *default* container specific settings.json values on container create.
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "workbench.iconTheme": "vscode-icons",
+        "workbench.colorTheme": "Default Dark+"
+    },
+
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "dbaeumer.vscode-eslint",
+        "vscode-icons-team.vscode-icons",
+        "esbenp.prettier-vscode",
+        "mongodb.mongodb-vscode"
+    ],
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [3000, 5432],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "yarn install",
+    "postCreateCommand": "bash .devcontainer/postcreate.sh"
+
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "node"
+}
